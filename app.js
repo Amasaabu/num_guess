@@ -80,7 +80,13 @@ function nextStage() {
     <p> Points: ${currentPoint + 1}</p>
         `;
   welcome.firstElementChild.style.display = "none";
-
+  const ifdiv = document.querySelector(".container > .new");
+  console.log(ifdiv);
+  if (ifdiv) {
+    ifdiv.innerHTML = `Guess a number between ${minNumber} and
+    ${maxNumber}, if you guess it correctly at the first attempt, you get a point and advance to the next stage.`;
+    return;
+  }
   const div = document.createElement("div");
   div.className = "new";
   div.innerHTML = `Guess a number between ${minNumber} and
